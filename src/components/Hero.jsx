@@ -2,23 +2,23 @@ import React from 'react';
 import heroBg from '../assets/hero-bg.png';
 
 const Hero = () => {
-    return (
-        <section className="hero">
-            <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;900&display=swap" rel="stylesheet" />
+  return (
+    <section className="hero">
+      <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;900&display=swap" rel="stylesheet" />
 
-            <div className="video-background">
-                <img src={heroBg} alt="Background" className="hero-video" />
-                <div className="overlay"></div>
-            </div>
+      <div className="video-background">
+        <img src={heroBg} alt="Background" className="hero-video" />
+        <div className="overlay"></div>
+      </div>
 
-            <div className="hero-content">
-                <div className="text-container">
-                    <h1 className="hero-title">WIDE IS FAR</h1>
-                    <div className="title-underline"></div>
-                </div>
-            </div>
+      <div className="hero-content">
+        <div className="text-container">
+          <h1 className="hero-title">WIDE IS FAR</h1>
+          <div className="title-underline"></div>
+        </div>
+      </div>
 
-            <style>{`
+      <style>{`
         .hero {
           position: relative;
           height: 100vh;
@@ -47,7 +47,7 @@ const Hero = () => {
           left: 0;
           width: 100%;
           height: 100%;
-          background: rgba(0, 0, 0, 0.5);
+          background: rgba(0, 0, 0, 0); /* Removed black overlay */
         }
         .hero-content {
           position: relative;
@@ -104,8 +104,8 @@ const Hero = () => {
           }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Hero;

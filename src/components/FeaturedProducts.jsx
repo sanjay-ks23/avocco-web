@@ -1,40 +1,31 @@
 import React from 'react';
 import zFly from '../assets/ZFly.png';
-import lifestyleTraining from '../assets/lifestyle-training.png';
-import lifestyleTrail from '../assets/lifestyle-trail.png';
-import heroShoe from '../assets/hero-shoe-clean.png';
-
+import iconShoe from '../assets/Icon.png';
+import colibriShoe from '../assets/Collibri.png';
 import '../styles/FeaturedProducts.css';
 
 const FeaturedProducts = () => {
   const categories = [
     {
       id: 1,
-      title: 'COLIBRI SERIES',
-      subtitle: 'For the Ultimate Energised Ride',
+      title: 'ZFLY SERIES',
+      subtitle: 'Dominating the Race Course',
       image: zFly,
-      link: '#colibri'
+      link: '#zfly'
     },
     {
       id: 2,
       title: 'ICON SERIES',
-      subtitle: 'Power Up Your Workouts',
-      image: lifestyleTraining,
+      subtitle: 'Wide is Far',
+      image: iconShoe,
       link: '#icon'
     },
     {
       id: 3,
-      title: 'FANTASY SERIES',
-      subtitle: 'Conquer Any Terrain',
-      image: lifestyleTrail,
-      link: '#fantasy'
-    },
-    {
-      id: 4,
-      title: 'GRAGLE SERIES',
-      subtitle: 'Everyday Comfort & Style',
-      image: heroShoe,
-      link: '#gragle'
+      title: 'COLIBRI SERIES',
+      subtitle: 'Redefining Lightweight Training',
+      image: colibriShoe,
+      link: '#colibri'
     }
   ];
 

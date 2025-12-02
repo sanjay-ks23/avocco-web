@@ -1,28 +1,28 @@
 .footer {
-    background-color: #111;
+    background-color: #000;
+    /* Deep black background */
     color: white;
-    padding: 0 0 20px;
-}
-
-.footer-separator {
-    height: 1px;
-    background-color: #333;
-    width: 90%;
-    margin: 0 auto 60px auto;
+    padding: 60px 0 20px;
+    font-family: 'Inter', sans-serif;
+    /* Ensure clean font */
 }
 
 .footer-content {
     max-width: 1400px;
     margin: 0 auto 60px;
-    display: flex;
-    justify-content: center;
+    padding: 0 40px;
 }
 
 .footer-links {
     display: flex;
-    gap: 100px;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 40px;
+}
+
+.link-column {
+    flex: 1;
+    min-width: 150px;
 }
 
 .link-column h3 {
@@ -30,6 +30,8 @@
     font-weight: 800;
     margin-bottom: 20px;
     color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .link-column ul {
@@ -39,56 +41,96 @@
 }
 
 .link-column li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .link-column a {
-    color: #888;
+    color: #999;
+    /* Grey text */
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 0.85rem;
+    transition: color 0.2s;
 }
 
 .link-column a:hover {
     color: white;
+    text-decoration: underline;
 }
 
-.footer-bottom {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding-top: 20px;
-    border-top: 1px solid #222;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    color: #666;
-}
-
-.social-links {
-    display: flex;
-    gap: 20px;
-}
-
+/* Social Icons */
 .social-links a {
-    color: #666;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
+    color: white;
+    transition: opacity 0.3s;
 }
 
 .social-links a:hover {
+    opacity: 0.7;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 40px 0;
+    border-top: 1px solid #222;
+    /* Subtle separator */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-bottom-links a {
+    color: #999;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-bottom-links a:hover {
     color: white;
+}
+
+@media (min-width: 768px) {
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: center;
+        /* Center everything */
+        position: relative;
+    }
+
+    .footer-bottom p {
+        position: absolute;
+        right: 40px;
+        margin: 0;
+    }
 }
 
 @media (max-width: 768px) {
     .footer-links {
-        gap: 40px;
-        text-align: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .link-column h3 {
+        margin-bottom: 10px;
     }
 
     .footer-bottom {
         flex-direction: column;
-        gap: 20px;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-bottom p {
+        position: static;
     }
 }

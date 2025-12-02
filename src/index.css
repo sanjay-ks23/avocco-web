@@ -39,3 +39,24 @@ button {
   background: none;
   font-family: inherit;
 }
+
+/* Global Section Styles */
+.section-header {
+  padding: 0 60px 30px;
+  max-width: 100%;
+  margin: 0;
+}
+
+.section-title {
+  color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}

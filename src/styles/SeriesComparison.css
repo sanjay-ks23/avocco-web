@@ -1,0 +1,132 @@
+.comparison-section {
+    background-color: #111;
+    padding: 80px 20px;
+    width: 100%;
+    color: white;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1400px;
+    margin: 60px auto 0;
+    gap: 40px;
+}
+
+.comparison-card {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    border: 1px solid #333;
+}
+
+.comparison-card:hover {
+    transform: translateY(-10px);
+    background: #222;
+    border-color: #555;
+}
+
+.comp-image-box {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.comp-shoe-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.comparison-card:hover .comp-shoe-img {
+    transform: scale(1.05) rotate(-5deg);
+}
+
+.comp-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comp-name {
+    font-size: 2rem;
+    font-weight: 800;
+    font-style: italic;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.comp-tagline {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.specs-list {
+    width: 100%;
+    margin-bottom: 30px;
+    border-top: 1px solid #333;
+}
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    font-size: 0.9rem;
+}
+
+.spec-label {
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.spec-value {
+    color: white;
+    font-weight: 700;
+}
+
+.comp-shop-btn {
+    background: white;
+    color: black;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.comp-shop-btn:hover {
+    background: #ddd;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .comparison-card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

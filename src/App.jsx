@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import FeaturedProducts from './components/FeaturedProducts';
 import TechnologyShowcase from './components/TechnologyShowcase';
-import SeasonColor from './components/SeasonColor';
+import AboutAvocco from './components/AboutAvocco';
 import Footer from './components/Footer';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Hero />
       <FeaturedProducts />
       <TechnologyShowcase />
-      <SeasonColor />
+      <AboutAvocco />
       <Footer />
     </div>
   );

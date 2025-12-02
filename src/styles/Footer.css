@@ -15,18 +15,22 @@
 
 .footer-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* Centered layout */
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 80px;
+    /* Reduced gap between columns */
 }
 
 .link-column {
-    flex: 1;
-    min-width: 150px;
+    flex: 0 1 auto;
+    /* Don't stretch */
+    min-width: 120px;
 }
 
 .link-column h3 {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    /* Slightly smaller headers */
     font-weight: 800;
     margin-bottom: 20px;
     color: white;
@@ -57,7 +61,20 @@
     text-decoration: underline;
 }
 
+/* Contact Link in Company Info */
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 /* Social Icons */
+.social-links {
+    display: flex;
+    gap: 25px;
+    /* Increased spacing between icons */
+}
+
 .social-links a {
     color: white;
     transition: opacity 0.3s;
@@ -75,49 +92,18 @@
     border-top: 1px solid #222;
     /* Subtle separator */
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
+    /* Align copyright to right */
     align-items: center;
-    gap: 20px;
     font-size: 0.75rem;
     color: #666;
-}
-
-.footer-bottom-links {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.footer-bottom-links a {
-    color: #999;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.footer-bottom-links a:hover {
-    color: white;
-}
-
-@media (min-width: 768px) {
-    .footer-bottom {
-        flex-direction: row;
-        justify-content: center;
-        /* Center everything */
-        position: relative;
-    }
-
-    .footer-bottom p {
-        position: absolute;
-        right: 40px;
-        margin: 0;
-    }
 }
 
 @media (max-width: 768px) {
     .footer-links {
         flex-direction: column;
         gap: 30px;
+        text-align: center;
     }
 
     .link-column h3 {
@@ -125,12 +111,14 @@
     }
 
     .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
+        justify-content: center;
     }
 
-    .footer-bottom p {
-        position: static;
+    .social-links {
+        justify-content: center;
+    }
+
+    .contact-link {
+        justify-content: center;
     }
 }

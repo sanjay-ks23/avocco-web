@@ -135,7 +135,13 @@
     /* Massive image */
     max-width: 1000px;
     transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
+    /* Default shadow for white shoe */
     filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.4));
+}
+
+.product-hero-image.black-shoe {
+    /* Tighter, darker shadow to avoid white halo/highlight */
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.8));
 }
 
 .product-hero-image.visible {
@@ -350,41 +356,22 @@
     color: #fff;
 }
 
-/* Tech Card Titles */
-.tech-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    font-weight: 900;
-    font-style: italic;
-    transition: color 0.5s ease;
-}
-
-/* GiGa Column Styles */
-.giga-column .tech-card h3,
-.giga-column .column-header {
-    color: #00ff88;
-    /* Neon Green for Black Mode */
-}
-
-.white-mode .giga-column .tech-card h3,
-.white-mode .giga-column .column-header {
-    color: #00aa55;
-    /* Darker Green for White Mode */
-}
-
-/* Performance Column Styles (Gradient) */
-.perf-column .tech-card h3,
-.perf-column .column-header {
+/* Tech Card Titles & Headers - Unified Gradient Style */
+.tech-card h3,
+.column-header {
     background: linear-gradient(to right, #fff, #aaa);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: white;
     /* Fallback */
+    font-weight: 900;
+    font-style: italic;
+    transition: all 0.5s ease;
 }
 
-.white-mode .perf-column .tech-card h3,
-.white-mode .perf-column .column-header {
+.white-mode .tech-card h3,
+.white-mode .column-header {
     background: linear-gradient(to right, #000, #666);
     background-clip: text;
     -webkit-background-clip: text;
@@ -393,18 +380,21 @@
     /* Fallback */
 }
 
+/* Remove specific column color overrides to ensure uniform gradient */
+.giga-column .tech-card h3,
+.giga-column .column-header,
+.perf-column .tech-card h3,
+.perf-column .column-header {
+    /* Inherits the gradient defined above */
+}
+
 /* Column Headers Base Style */
 .column-header {
     font-size: 2rem;
-    /* Increased size */
-    font-weight: 900;
-    font-style: italic;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 30px;
     opacity: 1;
-    /* Removed opacity for vibrant color */
-    transition: all 0.5s ease;
 }
 
 .tech-card p {
@@ -430,7 +420,8 @@
 
 .built-for-section .section-header {
     padding: 80px 60px 40px;
-    text-align: left;
+    text-align: center;
+    /* Center align as requested */
 }
 
 .built-for-section .section-title {

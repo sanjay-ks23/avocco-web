@@ -97,7 +97,7 @@ const ZFlyPage = () => {
             <section className="product-overview">
                 <div className="overview-container">
                     <div className="overview-text">
-                        <h3>Performance Packed</h3>
+                        <h2 className="section-title" style={{ color: activeColor === 'white' ? '#111' : 'white', marginBottom: '20px' }}>Performance Packed</h2>
                         <p>
                             The ZFLY configuration features an aliphatic "popcorn" supercritical midsole,
                             a wide anti-torsion carbon fiber plate, and lightweight, breathable jacquard mesh.
@@ -123,7 +123,7 @@ const ZFlyPage = () => {
             {/* Built For Section (Moved Up) */}
             <section className="built-for-section">
                 <div className="section-header">
-                    <h2 className="section-title">Built For Speed</h2>
+                    <h2 className="section-title">Built For</h2>
                 </div>
                 <div className="built-for-grid">
                     {builtForItems.map(item => (

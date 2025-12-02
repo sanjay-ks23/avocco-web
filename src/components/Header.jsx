@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo-new.png';
 
 import '../styles/Header.css';
@@ -49,11 +50,10 @@ const Header = () => {
 
           <nav className="nav-menu">
             <ul>
-              <li><a href="#new-releases">NEW RELEASES</a></li>
-              <li><a href="#men">MEN</a></li>
-              <li><a href="#women">WOMEN</a></li>
-              <li><a href="#kids">KIDS</a></li>
-              <li><a href="#sale">SALE</a></li>
+              <li><Link to="/">HOME</Link></li>
+              <li><Link to="/zfly">ZFLY</Link></li>
+              <li><a href="#colibri">COLIBRI</a></li>
+              <li><a href="#icon">ICON</a></li>
             </ul>
           </nav>
 
@@ -78,11 +78,10 @@ const Header = () => {
       {/* Mobile Navigation Overlay */}
       <div className={`mobile-nav-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
         <ul>
-          <li><a href="#new-releases" onClick={toggleMobileMenu}>NEW RELEASES</a></li>
-          <li><a href="#men" onClick={toggleMobileMenu}>MEN</a></li>
-          <li><a href="#women" onClick={toggleMobileMenu}>WOMEN</a></li>
-          <li><a href="#kids" onClick={toggleMobileMenu}>KIDS</a></li>
-          <li><a href="#sale" onClick={toggleMobileMenu}>SALE</a></li>
+          <li><Link to="/" onClick={toggleMobileMenu}>HOME</Link></li>
+          <li><Link to="/zfly" onClick={toggleMobileMenu}>ZFLY</Link></li>
+          <li><a href="#colibri" onClick={toggleMobileMenu}>COLIBRI</a></li>
+          <li><a href="#icon" onClick={toggleMobileMenu}>ICON</a></li>
         </ul>
       </div>
     </>

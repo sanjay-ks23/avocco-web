@@ -1,10 +1,12 @@
 import React from 'react';
-
+import { useTheme } from '../context/ThemeContext';
 import '../styles/Footer.css';
 
 const Footer = () => {
+  const { theme } = useTheme();
+
   return (
-    <footer className="footer">
+    <footer className={`footer ${theme}-theme`}>
       <div className="footer-content">
         <div className="footer-links">
           {/* Column 1: SPORTS */}

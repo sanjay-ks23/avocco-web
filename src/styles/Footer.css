@@ -1,10 +1,44 @@
 .footer {
-    background-color: #000;
-    /* Deep black background */
+    background-color: #111;
     color: white;
-    padding: 60px 0 20px;
+    padding: 80px 60px 40px;
+    transition: background-color 0.5s ease, color 0.5s ease;
     font-family: 'Inter', sans-serif;
     /* Ensure clean font */
+}
+
+/* Dynamic Themes */
+.footer.white-theme {
+    background-color: #d1d1d1;
+    /* Distinct greyish for white mode */
+    color: #000;
+    /* Black text for visibility */
+    border-top: none;
+}
+
+.footer.white-theme h3 {
+    color: #000;
+    /* Ensure titles are black */
+}
+
+.footer.white-theme a {
+    color: #222;
+    /* Dark grey for links */
+}
+
+.footer.white-theme a:hover {
+    color: #000;
+}
+
+.footer.white-theme .social-links a {
+    color: #111;
+}
+
+.footer.black-theme {
+    background-color: #1a1a1a;
+    /* Distinct greyish for black mode */
+    color: white;
+    border-top: none;
 }
 
 .footer-content {

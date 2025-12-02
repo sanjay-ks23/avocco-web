@@ -9,7 +9,7 @@ import midsoleIcon from '../assets/tech-midsole.png';
 
 const TechnologyShowcase = () => {
     return (
-        <section className="tech-section">
+        <section id="technology" className="tech-section">
             <div className="tech-header">
                 <h2 className="section-title">Technology</h2>
             </div>

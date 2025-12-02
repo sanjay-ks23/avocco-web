@@ -1,21 +1,27 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import FeaturedProducts from './components/FeaturedProducts';
-import TechnologyShowcase from './components/TechnologyShowcase';
-import AboutAvocco from './components/AboutAvocco';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import ZFlyPage from './pages/ZFlyPage';
+import ScrollToTop from './components/ScrollToTop';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <FeaturedProducts />
-      <TechnologyShowcase />
-      <AboutAvocco />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <Router>
+        <ScrollToTop />
+        <div className="App">
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/zfly" element={<ZFlyPage />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

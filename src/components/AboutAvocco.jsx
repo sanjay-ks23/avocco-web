@@ -4,7 +4,7 @@ import aboutImage from '../assets/about-heritage.png';
 
 const AboutAvocco = () => {
     return (
-        <section className="about-section">
+        <section id="history" className="about-section">
             <div className="about-container">
                 <div className="about-image-col">
                     <img src={aboutImage} alt="Avocco Heritage - Montebelluna" className="about-image" />

@@ -41,6 +41,23 @@
     border-top: none;
 }
 
+.footer.pink-theme {
+    background-color: #ffe6f2;
+    /* Soft Pink related to the theme */
+    color: #111;
+    border-top: none;
+}
+
+.footer.pink-theme h3,
+.footer.pink-theme a {
+    color: #111;
+}
+
+.footer.pink-theme a:hover {
+    color: #ff0080;
+    /* Pink hover effect */
+}
+
 .footer-content {
     max-width: 1400px;
     margin: 0 auto 60px;

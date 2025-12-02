@@ -28,7 +28,7 @@ const FeaturedProducts = () => {
       title: 'COLIBRI SERIES',
       subtitle: 'Redefining Lightweight Training',
       image: colibriShoe,
-      link: '#colibri',
+      link: '/colibri',
       elementId: 'colibri'
     }
   ];

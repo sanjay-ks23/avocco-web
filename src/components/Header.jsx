@@ -52,7 +52,7 @@ const Header = () => {
             <ul>
               <li><Link to="/">HOME</Link></li>
               <li><Link to="/zfly">ZFLY</Link></li>
-              <li><a href="#colibri">COLIBRI</a></li>
+              <li><Link to="/colibri">COLIBRI</Link></li>
               <li><a href="#icon">ICON</a></li>
             </ul>
           </nav>
@@ -80,7 +80,7 @@ const Header = () => {
         <ul>
           <li><Link to="/" onClick={toggleMobileMenu}>HOME</Link></li>
           <li><Link to="/zfly" onClick={toggleMobileMenu}>ZFLY</Link></li>
-          <li><a href="#colibri" onClick={toggleMobileMenu}>COLIBRI</a></li>
+          <li><Link to="/colibri" onClick={toggleMobileMenu}>COLIBRI</Link></li>
           <li><a href="#icon" onClick={toggleMobileMenu}>ICON</a></li>
         </ul>
       </div>

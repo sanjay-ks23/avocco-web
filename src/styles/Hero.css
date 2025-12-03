@@ -8,6 +8,7 @@
     justify-content: center;
 }
 
+/* Carousel Slides */
 .video-background {
     position: absolute;
     top: 0;
@@ -15,6 +16,13 @@
     width: 100%;
     height: 100%;
     z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.video-background.active {
+    opacity: 1;
+    z-index: 1;
 }
 
 .hero-video {
@@ -29,9 +37,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.2);
+    /* Slightly darker overlay for text visibility */
 }
 
+/* Content Layer */
 .hero-content {
     position: relative;
     z-index: 10;
@@ -41,6 +51,8 @@
     justify-content: center;
     padding: 0 40px;
     height: 100%;
+    pointer-events: none;
+    /* Allow clicks to pass through to arrows if needed */
 }
 
 .text-container {
@@ -58,7 +70,8 @@
     line-height: 1;
     margin: 0;
     letter-spacing: 8px;
-    color: white;
+    color: rgba(255, 255, 255, 0.85);
+    /* Slightly reduced opacity */
     text-transform: uppercase;
     white-space: nowrap;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
@@ -68,9 +81,105 @@
     width: 100%;
     max-width: 800px;
     height: 4px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.85);
     margin: 20px 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Arrows */
+.nav-container {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 20;
+}
+
+.nav-arrow {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    padding: 0;
+}
+
+.nav-arrow svg {
+    width: 24px;
+    height: 24px;
+    stroke: white;
+    transition: transform 0.3s ease;
+}
+
+.nav-arrow:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.nav-arrow:hover svg {
+    transform: scale(1.1);
+}
+
+.nav-arrow:active {
+    transform: scale(0.95);
+}
+
+/* Timer / Progress Indicator */
+.hero-timer {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-family: 'Saira Extra Condensed', sans-serif;
+    font-weight: 500;
+}
+
+.timer-track {
+    width: 150px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.timer-bar {
+    height: 100%;
+    background: white;
+    width: 0%;
+    animation-name: progress;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes progress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.slide-counter {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
 }
 
 @media (max-width: 1400px) {
@@ -84,11 +193,27 @@
         font-size: 6rem;
         letter-spacing: 4px;
     }
+
+    .nav-arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 768px) {
     .hero-title {
         font-size: 4rem;
         letter-spacing: 2px;
+    }
+
+    .nav-arrow {
+        display: none;
+        /* Hide arrows on mobile, rely on auto-play or swipe (future) */
+    }
+
+    .hero-timer {
+        bottom: 20px;
+        right: 20px;
     }
 }

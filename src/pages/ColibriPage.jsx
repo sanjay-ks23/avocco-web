@@ -8,11 +8,11 @@ import colibriGym from '../assets/colibri-built-gym.png';
 import '../styles/ColibriPage.css';
 
 const ColibriPage = () => {
-    const [activeColor, setActiveColor] = useState('black');
+    const [activeColor, setActiveColor] = useState('pink');
     const { setTheme } = useTheme();
 
     useEffect(() => {
-        setTheme(activeColor === 'pink' ? 'white' : 'black');
+        setTheme(activeColor === 'pink' ? 'pink' : 'black');
         return () => setTheme('default');
     }, [activeColor, setTheme]);
 
@@ -23,25 +23,24 @@ const ColibriPage = () => {
     const builtForItems = [
         {
             id: 1,
-            title: 'Short Distance',
-            subtitle: '3-5km Jogging',
-            image: colibriPark,
-            desc: 'Perfect for your daily run.',
-            style: { objectPosition: 'right center' } // Focus on right side
+            title: 'City Run',
+            subtitle: 'Urban Exploration',
+            image: colibriStreet,
+            desc: 'Agile and responsive for navigating busy city streets.'
         },
         {
             id: 2,
-            title: 'Daily Commute',
-            subtitle: 'Leisure Walking',
-            image: colibriStreet,
-            desc: 'Comfort that cares for your knees.'
+            title: 'Park Jog',
+            subtitle: 'Morning Routine',
+            image: colibriPark,
+            desc: 'Perfect cushioning for paved paths and park trails.'
         },
         {
             id: 3,
-            title: 'Gym & Indoor',
-            subtitle: 'Fitness Training',
+            title: 'Gym Work',
+            subtitle: 'Indoor Training',
             image: colibriGym,
-            desc: 'Versatile support for all your workouts.'
+            desc: 'Stable and breathable for treadmill sessions and light lifting.'
         }
     ];
 
@@ -56,11 +55,12 @@ const ColibriPage = () => {
                         {activeColor === 'pink' ? 'AIRY PINK' : 'SHADOW BLACK'}
                     </h1>
                     <h2 className="product-subtitle">
-                        WIDE IS FAR
+                        {activeColor === 'pink' ? 'Light. Playful. Free.' : 'Sleek. Silent. Fast.'}
                     </h2>
                     <p className="product-desc">
-                        The Colibri Air 3.0 redefines lightweight training. With a focus on joint-friendly cushioning
-                        and a wide forefoot design, it's the perfect choice for short runs, gym sessions, and daily life.
+                        The Colibri Series is designed for those who move lightly. Whether you're
+                        gliding through the city in Airy Pink or moving unseen in Shadow Black,
+                        experience weightless performance.
                     </p>
 
                     <div className="hero-controls">
@@ -120,30 +120,7 @@ const ColibriPage = () => {
                 </div>
             </section>
 
-            {/* Built For Section */}
-            <section className="built-for-section">
-                <div className="section-header">
-                    <h2 className="section-title">Built For</h2>
-                </div>
-                <div className="built-for-grid">
-                    {builtForItems.map(item => (
-                        <div key={item.id} className="built-for-item">
-                            <div className="image-wrapper">
-                                <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className="built-for-image"
-                                    style={item.style || {}}
-                                />
-                            </div>
-                            <div className="built-for-content">
-                                <h3 className="built-for-subtitle">{item.subtitle}</h3>
-                                <h2 className="built-for-title">{item.title}</h2>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
+
 
             {/* Technology Deep Dive */}
             <section className="tech-deep-dive">
@@ -212,6 +189,31 @@ const ColibriPage = () => {
                             </p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Built For Section */}
+            <section className="built-for-section">
+                <div className="section-header">
+                    <h2 className="section-title">Built For</h2>
+                </div>
+                <div className="built-for-grid">
+                    {builtForItems.map(item => (
+                        <div key={item.id} className="built-for-item">
+                            <div className="image-wrapper">
+                                <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className="built-for-image"
+                                    style={item.style || {}}
+                                />
+                            </div>
+                            <div className="built-for-content">
+                                <h3 className="built-for-subtitle">{item.subtitle}</h3>
+                                <h2 className="built-for-title">{item.title}</h2>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>

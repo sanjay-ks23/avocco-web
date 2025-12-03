@@ -20,7 +20,7 @@ const FeaturedProducts = () => {
       title: 'ICON SERIES',
       subtitle: 'Wide is Far',
       image: iconShoe,
-      link: '#icon',
+      link: '/icon',
       elementId: 'icon'
     },
     {

@@ -11,23 +11,15 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-links">
           {/* Column 1: SPORTS */}
-          <div className="link-column">
-            <h3>SPORTS</h3>
-            <ul>
-              <li><a href="#">Hiking</a></li>
-              <li><a href="#">Running</a></li>
-              <li><a href="#">Athletics</a></li>
-              <li><a href="#">Strength Training</a></li>
-            </ul>
-          </div>
+
 
           {/* Column 2: COLLECTIONS */}
           <div className="link-column">
             <h3>COLLECTIONS</h3>
             <ul>
-              <li><Link to="/zfly">ZFly Series</Link></li>
-              <li><Link to="/icon">Icon Series</Link></li>
-              <li><Link to="/colibri">Colibri Series</Link></li>
+              <li><Link to="/zfly" onClick={() => window.scrollTo(0, 0)}>ZFly Series</Link></li>
+              <li><Link to="/icon" onClick={() => window.scrollTo(0, 0)}>Icon Series</Link></li>
+              <li><Link to="/colibri" onClick={() => window.scrollTo(0, 0)}>Colibri Series</Link></li>
             </ul>
           </div>
 

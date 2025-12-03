@@ -42,20 +42,20 @@
 }
 
 .footer.pink-theme {
-    background-color: #ffe6f2;
-    /* Soft Pink related to the theme */
-    color: #111;
+    background-color: #111;
+    /* Black background for pink theme as requested */
+    color: white;
     border-top: none;
 }
 
 .footer.pink-theme h3,
 .footer.pink-theme a {
-    color: #111;
+    color: white;
 }
 
 .footer.pink-theme a:hover {
     color: #ff0080;
-    /* Pink hover effect */
+    /* Keep pink hover effect */
 }
 
 .footer-content {

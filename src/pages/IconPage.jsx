@@ -23,10 +23,29 @@ import iconOrangeSole from '../assets/icon-orange-sole.png';
 import iconOrangeSide from '../assets/icon-orange-side.png';
 import iconOrangeBack from '../assets/icon-orange-back.png';
 
+import iconOrangeNew1 from '../assets/icon-orange-new-1.png';
+import iconOrangeNew3 from '../assets/icon-orange-new-3.png';
+
+import builtMarathon from '../assets/icon-built-marathon.jpg';
+import builtTraining from '../assets/icon-built-training.png';
+import builtTrail from '../assets/icon-built-trail.jpg';
+
 const IconPage = () => {
-    const [activeColor, setActiveColor] = useState('orange');
-    const [activeAngle, setActiveAngle] = useState('side'); // 'side', 'back', 'top', 'sole'
+    const [activeColor, setActiveColor] = useState('lightblue'); // Start with lightblue
+    const [activeAngle, setActiveAngle] = useState(0); // Index 0-2
     const { setTheme } = useTheme();
+
+    // Image Mapping
+    // Light Blue: Top -> Side -> Sole
+    // Black: Top -> Back -> Sole
+    // Orange: New1 -> Sole -> New3 (User Request: Smooth Animation)
+    // Blue: Top -> Back -> Sole
+    const images = {
+        lightblue: [iconLightBlueTop, iconLightBlueSide, iconLightBlueSole],
+        black: [iconBlackTop, iconBlackBack, iconBlackSole],
+        orange: [iconOrangeNew1, iconOrangeSole, iconOrangeNew3],
+        blue: [iconBlueTop, iconBlueBack, iconBlueSole]
+    };
 
     useEffect(() => {
         setTheme(activeColor);
@@ -35,10 +54,12 @@ const IconPage = () => {
 
     const toggleColor = (color) => {
         setActiveColor(color);
+        // Reset to the first angle (index 0)
+        setActiveAngle(0);
     };
 
-    const toggleAngle = (angle) => {
-        setActiveAngle(angle);
+    const toggleAngle = (index) => {
+        setActiveAngle(index);
     };
 
     const getColorName = () => {
@@ -51,15 +72,32 @@ const IconPage = () => {
         }
     };
 
-    // Image Mapping
-    const images = {
-        black: { top: iconBlackTop, sole: iconBlackSole, side: iconBlackSide, back: iconBlackBack },
-        lightblue: { top: iconLightBlueTop, sole: iconLightBlueSole, side: iconLightBlueSide, back: iconLightBlueBack },
-        blue: { top: iconBlueTop, sole: iconBlueSole, side: iconBlueSide, back: iconBlueBack },
-        orange: { top: iconOrangeTop, sole: iconOrangeSole, side: iconOrangeSide, back: iconOrangeBack }
-    };
-
     const currentImages = images[activeColor];
+
+    const builtForItems = [
+        {
+            id: 1,
+            title: 'Marathon Racing',
+            subtitle: 'Stability & Protection',
+            image: builtMarathon,
+            desc: 'For mass participation marathon runners needing stability and protection.'
+        },
+        {
+            id: 2,
+            title: 'Long Distance Training',
+            subtitle: 'Long Distance',
+            image: builtTraining,
+            desc: 'Long Distance runs where consistent comfort is key.'
+        },
+        {
+            id: 3,
+            title: 'Light Trail',
+            subtitle: 'Versatile Grip',
+            image: builtTrail,
+            desc: 'Versatile enough for long distance training on weekend hikes and light off-road trails.'
+        }
+    ];
+
 
     return (
         <div className={`icon-page ${activeColor}-mode`}>
@@ -75,7 +113,7 @@ const IconPage = () => {
                     </p>
 
                     <div className="icon-controls">
-                        {['orange', 'black', 'lightblue', 'blue'].map(color => (
+                        {['lightblue', 'black', 'orange', 'blue'].map(color => (
                             <button
                                 key={color}
                                 className={`icon-toggle-btn ${color} ${activeColor === color ? 'active' : ''}`}
@@ -90,25 +128,32 @@ const IconPage = () => {
                 <div className="icon-hero-gallery">
                     {/* Main Image Display - Stacked for Smooth Transition */}
                     <div className="icon-main-image-wrapper">
-                        {['orange', 'black', 'lightblue', 'blue'].map(color => (
-                            <img
-                                key={color}
-                                src={images[color][activeAngle]}
-                                alt={`Icon Vento ${color} ${activeAngle}`}
-                                className={`icon-main-image ${activeColor === color ? 'visible' : 'hidden'}`}
-                            />
-                        ))}
+                        {['lightblue', 'black', 'orange', 'blue'].map(color => {
+                            const colorImages = images[color];
+                            const imageSrc = colorImages[activeAngle];
+
+                            if (!imageSrc) return null;
+
+                            return (
+                                <img
+                                    key={color}
+                                    src={imageSrc}
+                                    alt={`Icon Vento ${color} ${activeAngle}`}
+                                    className={`icon-main-image ${activeColor === color ? 'visible' : 'hidden'}`}
+                                />
+                            );
+                        })}
                     </div>
 
                     {/* Thumbnails */}
                     <div className="icon-thumbnails">
-                        {['side', 'back', 'top', 'sole'].map(angle => (
+                        {currentImages.map((img, index) => (
                             <div
-                                key={angle}
-                                className={`icon-thumbnail ${activeAngle === angle ? 'active' : ''}`}
-                                onClick={() => toggleAngle(angle)}
+                                key={index}
+                                className={`icon-thumbnail ${activeAngle === index ? 'active' : ''}`}
+                                onClick={() => toggleAngle(index)}
                             >
-                                <img src={currentImages[angle]} alt={angle} />
+                                <img src={img} alt={`View ${index + 1}`} />
                             </div>
                         ))}
                     </div>
@@ -204,21 +249,22 @@ const IconPage = () => {
             </section>
 
             {/* Built For Section */}
-            <section className="icon-built-for">
-                <h2 className="section-title">Built For</h2>
-                <div className="built-grid">
-                    <div className="built-card">
-                        <h3>Marathon Racing</h3>
-                        <p>For mass participation marathon runners needing stability and protection.</p>
-                    </div>
-                    <div className="built-card">
-                        <h3>LSD Training</h3>
-                        <p>Long Slow Distance runs where consistent comfort is key.</p>
-                    </div>
-                    <div className="built-card">
-                        <h3>Light Trail</h3>
-                        <p>Versatile enough for weekend hikes and light off-road trails.</p>
-                    </div>
+            <section className="built-for-section">
+                <div className="section-header">
+                    <h2 className="section-title">Built For</h2>
+                </div>
+                <div className="built-for-grid">
+                    {builtForItems.map(item => (
+                        <div key={item.id} className="built-for-item">
+                            <div className="image-wrapper">
+                                <img src={item.image} alt={item.title} className="built-for-image" />
+                            </div>
+                            <div className="built-for-content">
+                                <h3 className="built-for-subtitle">{item.subtitle}</h3>
+                                <h2 className="built-for-title">{item.title}</h2>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>

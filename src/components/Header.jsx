@@ -45,7 +45,9 @@ const Header = () => {
           </button>
 
           <div className="logo-section">
-            <img src={logo} alt="Avocco Logo" className="logo" />
+            <Link to="/">
+              <img src={logo} alt="Avocco Logo" className="logo" />
+            </Link>
           </div>
 
           <nav className="nav-menu">

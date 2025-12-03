@@ -120,25 +120,7 @@ const ZFlyPage = () => {
                 </div>
             </section>
 
-            {/* Built For Section (Moved Up) */}
-            <section className="built-for-section">
-                <div className="section-header">
-                    <h2 className="section-title">Built For</h2>
-                </div>
-                <div className="built-for-grid">
-                    {builtForItems.map(item => (
-                        <div key={item.id} className="built-for-item">
-                            <div className="image-wrapper">
-                                <img src={item.image} alt={item.title} className="built-for-image" />
-                            </div>
-                            <div className="built-for-content">
-                                <h3 className="built-for-subtitle">{item.subtitle}</h3>
-                                <h2 className="built-for-title">{item.title}</h2>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </section>
+
 
             {/* Technology Deep Dive */}
             <section className="tech-deep-dive">
@@ -224,6 +206,26 @@ const ZFlyPage = () => {
                             </p>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Built For Section */}
+            <section className="built-for-section">
+                <div className="section-header">
+                    <h2 className="section-title">Built For</h2>
+                </div>
+                <div className="built-for-grid">
+                    {builtForItems.map(item => (
+                        <div key={item.id} className="built-for-item">
+                            <div className="image-wrapper">
+                                <img src={item.image} alt={item.title} className="built-for-image" />
+                            </div>
+                            <div className="built-for-content">
+                                <h3 className="built-for-subtitle">{item.subtitle}</h3>
+                                <h2 className="built-for-title">{item.title}</h2>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>

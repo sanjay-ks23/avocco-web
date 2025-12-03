@@ -160,14 +160,11 @@
 
 .product-hero-image {
     position: absolute;
-    width: 140%;
-    max-width: 1000px;
+    width: 150%;
+    /* Massive image */
+    max-width: 1100px;
     transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease;
-    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.2));
-}
-
-.product-hero-image.black-shoe {
-    filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.6));
+    /* Shadow removed */
 }
 
 .product-hero-image.visible {
@@ -362,7 +359,8 @@
 }
 
 .pink-mode .tech-card {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
+    /* Slightly reduced from 0.9 for glass feel */
     border: 1px solid #ff0080;
     /* Pink Border Accent */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -407,13 +405,23 @@
 
 .pink-mode .tech-card h3,
 .pink-mode .column-header {
-    color: #000;
-    /* Solid Black */
+    background: linear-gradient(135deg, #000 10%, #e60073 60%, #ff66b2 100%);
+    /* Balanced pink */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1 !important;
+    text-shadow: none;
+    font-weight: 900;
 }
 
 .black-mode .tech-card h3,
 .black-mode .column-header {
-    color: white;
+    background: linear-gradient(135deg, #ffffff 0%, #cccccc 50%, #888888 100%);
+    /* Stronger silver */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+    font-weight: 900;
 }
 
 /* Column Headers Base Style */
@@ -431,7 +439,10 @@
 }
 
 .pink-mode .tech-card p {
-    color: #111;
+    color: #111 !important;
+    /* Force dark text */
+    font-weight: 500;
+    /* Make it a bit bolder */
 }
 
 .black-mode .tech-card p {

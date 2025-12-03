@@ -9,6 +9,25 @@ import IconPage from './pages/IconPage';
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 
+import { AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
+import PageTransition from './components/PageTransition';
+
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+        <Route path="/zfly" element={<PageTransition><ZFlyPage /></PageTransition>} />
+        <Route path="/colibri" element={<PageTransition><ColibriPage /></PageTransition>} />
+        <Route path="/icon" element={<PageTransition><IconPage /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 function App() {
   return (
     <ThemeProvider>
@@ -16,12 +35,7 @@ function App() {
         <ScrollToTop />
         <div className="App">
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/zfly" element={<ZFlyPage />} />
-            <Route path="/colibri" element={<ColibriPage />} />
-            <Route path="/icon" element={<IconPage />} />
-          </Routes>
+          <AnimatedRoutes />
           <Footer />
         </div>
       </Router>

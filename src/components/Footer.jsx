@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import '../styles/Footer.css';
 
@@ -24,9 +25,9 @@ const Footer = () => {
           <div className="link-column">
             <h3>COLLECTIONS</h3>
             <ul>
-              <li><a href="#">ZFly Series</a></li>
-              <li><a href="#">Icon Series</a></li>
-              <li><a href="#">Colibri Series</a></li>
+              <li><Link to="/zfly">ZFly Series</Link></li>
+              <li><Link to="/icon">Icon Series</Link></li>
+              <li><Link to="/colibri">Colibri Series</Link></li>
             </ul>
           </div>
 

@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import ZFlyPage from './pages/ZFlyPage';
 import ColibriPage from './pages/ColibriPage';
+import IconPage from './pages/IconPage';
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/zfly" element={<ZFlyPage />} />
             <Route path="/colibri" element={<ColibriPage />} />
+            <Route path="/icon" element={<IconPage />} />
           </Routes>
           <Footer />
         </div>

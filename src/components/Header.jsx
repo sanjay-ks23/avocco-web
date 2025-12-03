@@ -53,7 +53,7 @@ const Header = () => {
               <li><Link to="/">HOME</Link></li>
               <li><Link to="/zfly">ZFLY</Link></li>
               <li><Link to="/colibri">COLIBRI</Link></li>
-              <li><a href="#icon">ICON</a></li>
+              <li><Link to="/icon">ICON</Link></li>
             </ul>
           </nav>
 
@@ -81,7 +81,7 @@ const Header = () => {
           <li><Link to="/" onClick={toggleMobileMenu}>HOME</Link></li>
           <li><Link to="/zfly" onClick={toggleMobileMenu}>ZFLY</Link></li>
           <li><Link to="/colibri" onClick={toggleMobileMenu}>COLIBRI</Link></li>
-          <li><a href="#icon" onClick={toggleMobileMenu}>ICON</a></li>
+          <li><Link to="/icon" onClick={toggleMobileMenu}>ICON</Link></li>
         </ul>
       </div>
     </>

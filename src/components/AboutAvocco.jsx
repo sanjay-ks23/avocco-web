@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/AboutAvocco.css';
 import aboutImage from '../assets/about-heritage.png';
 
@@ -28,7 +29,9 @@ const AboutAvocco = () => {
                             </p>
                         </div>
 
-                        <button className="about-btn">Discover More</button>
+                        <Link to="/history">
+                            <button className="primary-btn">Discover More</button>
+                        </Link>
                     </div>
                 </div>
             </div>

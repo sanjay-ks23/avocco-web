@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ZFlyPage from './pages/ZFlyPage';
 import ColibriPage from './pages/ColibriPage';
 import IconPage from './pages/IconPage';
+import HistoryPage from './pages/HistoryPage';
 import ScrollToTop from './components/ScrollToTop';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -23,6 +24,7 @@ const AnimatedRoutes = () => {
         <Route path="/zfly" element={<PageTransition><ZFlyPage /></PageTransition>} />
         <Route path="/colibri" element={<PageTransition><ColibriPage /></PageTransition>} />
         <Route path="/icon" element={<PageTransition><IconPage /></PageTransition>} />
+        <Route path="/history" element={<PageTransition><HistoryPage /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );

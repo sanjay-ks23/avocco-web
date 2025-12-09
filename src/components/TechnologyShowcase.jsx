@@ -53,10 +53,7 @@ const TechnologyShowcase = () => {
                 <h3 className="core-tech-title">Core Technology</h3>
 
                 <div className="tech-logos-grid">
-                    <div className="tech-brand">
-                        <span className="brand-name brand-vibram">Vibram</span>
-                        <span className="brand-desc">Vibram brand outsoles.</span>
-                    </div>
+
 
                     <div className="tech-brand">
                         <span className="brand-name">Natural Comfort</span>
